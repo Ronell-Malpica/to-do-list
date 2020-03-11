@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="to-do-list">
+            <div class="to-do-list__header">
+                <i class="fas fa-sync-alt icon-refresh"></i>
+                <div id="date">Thurday , feb 14</div>
+            </div>
+            <div class="to-do-list__content">
+                <ul id="list" class="list">
+                    <li class="list__item">
+                        <i class="far fa-circle icon"></i>
+                        <p class="text">Drink Coffe</p>
+                        <i class="far fa-trash-alt icon icon-red"></i>
+                    </li>
+                    <li class="list__item">
+                        <i class="fas fa-check-circle icon icon-check"></i>
+                        <p class="text line-t">Drink Coffe</p>
+                        <i class="far fa-trash-alt icon icon-red "></i>
+                    </li>
+                </ul>
+            </div>
+            <div class="to-do-list__footer">
+                <i class="fas fa-plus-circle icon"></i>
+                <input type="text" id="input_add">
+            </div>
+            
+        </div>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+</html>

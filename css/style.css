@@ -1,0 +1,131 @@
+  html{
+      box-sizing: border-box;
+  }
+  *,*::before,*::after{
+      box-sizing: inherit;
+  }
+  body{
+      margin: 0;
+      min-height: 100vh;
+      font-family: sans-serif;
+  }
+  .wrapper{
+    /* margin-left: auto; */
+    padding-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height:  100vh */
+    /* background-color: tomato; */
+
+  }
+  .to-do-list{
+      width: 100%;
+      /* background-color: royalblue; */
+      border:1px solid  rgba(0, 0, 0, 0.3) ;
+      max-width: 350px;
+      min-height: 500px;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+
+
+  }
+  /* ESTILOS PARA LA PARTE DEL HEADER */
+  .to-do-list__header{
+      height: 200px;
+      background-color: yellow;
+      background-image: url('./../img/iphone-on-yellow-surface-2228569.jpg');
+      background-size:  100% 100%;
+      background-size: cover;
+      background-position: center center;
+      position: relative;
+  }
+  .icon-refresh{
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 30px;
+      color:  white;
+      transition: .3s;
+  }
+  .icon-refresh:hover{
+    cursor: pointer;
+    text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
+    transform: rotate(45deg);
+  }
+  #date{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding:1rem;
+      /* font-weight: bolder; */
+      font-size: 1.4rem;
+  }
+  /* ESTILOS PARA LOS  ITEMS DE LISTA */
+
+  .list{
+      margin: 0 ; 
+      padding: 0;
+     
+  }
+    .list__item{
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* padding: .5rem; */
+        padding-left: .5rem;
+        padding-right: .5rem;
+        /* padding-top: 0; */
+        margin-bottom: 2px;
+    
+    }
+
+.icon{
+    font-size: 25px;
+    color: grey;
+    cursor: pointer ;
+}
+.icon-red:active{
+    color: red !important ;
+}
+.icon:active{
+    color: rgba(0, 0, 0, 0.7);
+}
+.icon.icon-check{
+    color: rgb(16, 204, 88);
+}
+.text{
+    flex: 1;
+    padding-left: 1rem;
+    font-size: 1.3rem;
+}
+.line-t{
+    text-decoration: line-through  rgb(16, 204, 88);
+    
+}
+/* ESTILOS  PARA EL FOOTER */
+
+
+
+
+
+  .to-do-list__footer{
+      margin-top: auto;
+      background-color: #f2f2f2;
+      padding: 1.3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  #input_add{
+      flex: 1;
+      margin-left: 1rem;
+      height: 2rem;
+      padding-left: .3rem;
+      font-size: 1.3rem;
+      border:none;
+      /* width: 100%; */
+  }
