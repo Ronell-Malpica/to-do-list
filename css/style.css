@@ -8,7 +8,7 @@
       margin: 0;
       min-height: 100vh;
       font-family: sans-serif;
-      background-image: linear-gradient(35deg , black ,  red)
+      background-image: linear-gradient(35deg , rgb(14, 12, 12) , rgb(95, 108, 148))
   }
   .wrapper{
     /* margin-left: auto; */
