@@ -40,7 +40,7 @@
   .to-do-list__header{
       height: 200px;
       background-color: yellow;
-      background-image: url('./../img/iphone-on-yellow-surface-2228569.jpg');
+      background-image: url(./../img/grayscale-photo-of-person-jogging-near-river-3309268.jpg);
       background-size:  100% 100%;
       background-size: cover;
       background-position: center center;
@@ -123,6 +123,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      border-top: 1px  solid grey;
   }
   #input_add{
       flex: 1;

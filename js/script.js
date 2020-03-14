@@ -6,18 +6,28 @@ const    $btnDelete  =   document.querySelector('#delete');
 const    list        = [];
 
 $btnDelete.addEventListener('click', ()=> { 
-    // borrar todo el local storage
+    // borrando todo el local storage
     localStorage.clear();
+    // vaciando la lista 
     $list.innerHTML = "" });
-// EVENTOS DE CARGA 
- document.addEventListener('DOMContentLoaded',listLocalStorage)
+
+    // EVENTOS DE CARGA 
+    document.addEventListener('DOMContentLoaded',listLocalStorage);
+
+function listLocalStorage(){
+    let datos = obtenerLocalStorage('ITEMS');
+    // console.log( datos )
+    datos.forEach( (valueInter)=>{
+        showList( valueInter.text)
+    })
+}
 
 // MOSTRAR FECHA
-function  showDate(id){
-    const days = [  "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday" ]
-    const month =["Sunday" ,"February","March","April","May","June","July" , "August","September" ,"October" , "November" ,"December"]
+function  showDate( id ){
+    const days = [ "Sunday" , "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+    const month =["January" ,"February","March","April","May","June","July" , "August","September" ,"October" , "November" ,"December"]
     let  fecha  = new Date();
-    id.innerHTML = `${days[fecha.getDay() ]}  ,${ month[fecha.getMonth()] } ${fecha.getDay() + 1} `
+    id.innerHTML = `${days[fecha.getDay() ]}  ,${ month[fecha.getMonth()] } ${fecha.getDate() } `
 }
 showDate( $idDate )
 
@@ -32,7 +42,7 @@ function showChnagesClass(){
      event.target.classList.toggle('icon-check')
 }
 
-$list.addEventListener('click',(event)=>{
+$list.addEventListener('click', (event)=>{
     if( event.target.classList.contains('icon-circle' ) ){
         showChnagesClass();
     }
@@ -41,8 +51,7 @@ $list.addEventListener('click',(event)=>{
             if( active ){
                 // ELIMINANDO ELEMENT
                 let $item = event.target.parentElement ;
-                console.log( $item)
-                console.log( event.target.previousElementSibling.textContent );
+                // eliminandolo  del LOCALSTORAGE
                 deleteLocalStorage( event.target.previousElementSibling.textContent,'ITEMS')
                 $item.remove();
             }else{
@@ -55,7 +64,7 @@ $list.addEventListener('click',(event)=>{
 $footerList.addEventListener('click', (event)=>{
     //  ADD ITEMS
     if( event.target.tagName ==="I" ){
-        let value =captureValue();
+        let value = captureValue();
         if( value ){
             addLocalStorage({ text: value} ,'ITEMS')
             showList( value);
@@ -72,6 +81,7 @@ function captureValue(){
         return   valueText;
     }
 }
+// PARA MOSTRAR LA LISTA
 function showList( value){
     let format =  `
     <li class="list__item">
@@ -81,17 +91,11 @@ function showList( value){
     </li>`
     $list.innerHTML += format
 }
-function listLocalStorage(){
-    let datos = obtenerLocalStorage('ITEMS');
-    // console.log( datos )
-    datos.forEach( (valueInter)=>{
-        showList( valueInter.text)
-    })
-}
+
 //  FUNCION  PARA LOCALSTORAGE
-function obtenerLocalStorage(  key ){
+function obtenerLocalStorage( key ){
     let value ;
-    if( localStorage.getItem(key)===null){
+    if( localStorage.getItem( key )===null){
         value   = [];
     }else{
         value   = JSON.parse( localStorage.getItem( key) );
@@ -106,8 +110,6 @@ function addLocalStorage( item ,key){
 function deleteLocalStorage( item ,  key ){
     let data  = obtenerLocalStorage( key );
     data.forEach( (currentValue , index)=>{
-        console.log('c:',currentValue)
-        console.log('I:', item)
         console.log('curren VALUE :', currentValue ," : ", item===currentValue)
         // console.log( item === currentValue)
         if( item === currentValue.text ){
