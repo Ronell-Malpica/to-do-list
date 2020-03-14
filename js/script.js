@@ -49,7 +49,7 @@ $list.addEventListener('click', (event)=>{
     if( event.target.classList.contains('fa-trash-alt') ){
             let  active = event.target.previousElementSibling.previousElementSibling.classList.contains('fa-check-circle');
             if( active ){
-                // ELIMINANDO ELEMENT
+                // ELIMINANDO ITEM
                 let $item = event.target.parentElement ;
                 // eliminandolo  del LOCALSTORAGE
                 deleteLocalStorage( event.target.previousElementSibling.textContent,'ITEMS')

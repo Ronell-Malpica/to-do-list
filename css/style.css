@@ -67,11 +67,25 @@
       /* font-weight: bolder; */
       font-size: 1.4rem;
   }
+  .to-do-list__content{
+      /* background-color: tomato !important; */
+      /* height: 100%; */
+      position: relative;
+      flex: 1;
+      overflow-y: scroll;
+      
+  }
   /* ESTILOS PARA LOS  ITEMS DE LISTA */
 
   .list{
       margin: 0 ; 
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0 ;
+      right: 0;
       padding: 0;
+      
      
   }
     .list__item{
